@@ -9,8 +9,8 @@ You are building a directory of gamers and their favorite games to auto match fo
         Gamers individual interests with their levels (noob, pro, invincible)
 
     Search API based on gamers levels, games and geography for auto-matching
-    API to give credits to individual users
-    API to get the gamer with maximum credits for each game based on their levels.
+    API to give credit to individual users
+    API to get the gamer with maximum credit for each game based on their levels.
 
 Make sure you use a full REST API convention and that you return the correct error codes when necessary. If you posses the skills, using GraphQL endpoints is also an option.
 

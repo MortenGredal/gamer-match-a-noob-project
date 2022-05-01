@@ -1,6 +1,6 @@
 package dk.game;
 
-import dk.game.entity.Credits;
+import dk.game.entity.Credit;
 import dk.game.service.CreditService;
 import dk.game.service.MatchService;
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ public class ValidationTests {
     @Test
     public void givenValidGame_whenQueryOnGame_serviceProducesAnEntity_shouldReturnOkWithBody_shouldReturnOk() throws Exception {
 
-        when(creditService.getCreditsByGame(eq("somegame"))).thenReturn(List.of(new Credits()));
+        when(creditService.getCreditsByGame(eq("somegame"))).thenReturn(List.of(new Credit()));
 
         this.mockMvc.perform(get("/credit/game/somegame")).andExpect(status().isOk())
                 .andExpect(jsonPath("$[0]").exists()); // expect an empty list

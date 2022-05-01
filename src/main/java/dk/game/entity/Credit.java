@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Credits {
+public class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

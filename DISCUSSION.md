@@ -37,7 +37,7 @@ It is a crude implementation, alternatively it could be solved by using query ex
   
 # Task 2 - Credits (I am credit to team!)
 
-Once the initial game, user and association table(s) were done, adding credits was fairly straightforward.  
+Once the initial game, user and association table(s) were done, adding credit was fairly straightforward.  
   
 Since a user can have a credit in every team, a uni-literal OneToMany relationship made sense.  
 Same goes for Credits-Game, as a credit can only be tied to one game. 
@@ -74,7 +74,7 @@ My HQL is a tad rusty, so I had trouble getting the high-scorer by game and skil
 It works via SQL, but HQL wouldn't have any of it.  
 ```sql
 select c.user_id, max(c.credit), c.game_name, u.skill, u.name
-from credits as c
+from credit as c
 LEFT JOIN users u on c.user_id = u.id
 group by c.game_name, u.skill
 ```

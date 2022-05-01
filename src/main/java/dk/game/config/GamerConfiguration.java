@@ -122,27 +122,27 @@ public class GamerConfiguration {
             users.save(noob_gamer_asia);
 
 
-            Credits c1 = new Credits();
+            Credit c1 = new Credit();
             c1.setGame(fortnite);
             c1.setUser(invincible_gamer_asia);
             c1.setCredit(99999999);
-            Credits c2 = new Credits();
+            Credit c2 = new Credit();
             c2.setGame(fortnite);
             c2.setUser(noob_gamer_asia);
             c2.setCredit(100);
-            Credits c3 = new Credits();
+            Credit c3 = new Credit();
             c3.setGame(cod4);
             c3.setUser(pro_gamer_asia);
             c3.setCredit(100);
-            Credits c4 = new Credits();
+            Credit c4 = new Credit();
             c4.setGame(cod4);
             c4.setUser(invincible_gamer_asia);
             c4.setCredit(10000);
-            Credits c5 = new Credits();
+            Credit c5 = new Credit();
             c5.setGame(cod4);
             c5.setUser(noob_gamer_europe);
             c5.setCredit(10001);
-            Credits c6 = new Credits();
+            Credit c6 = new Credit();
             c6.setGame(cod4);
             c6.setUser(noob_gamer_europe_2);
             c6.setCredit(100);

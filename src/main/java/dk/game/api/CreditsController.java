@@ -1,6 +1,6 @@
 package dk.game.api;
 
-import dk.game.entity.Credits;
+import dk.game.entity.Credit;
 import dk.game.entity.SkillLevel;
 import dk.game.service.CreditService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,7 +29,7 @@ public class CreditsController {
 
     @GetMapping("/game/{game}")
     @Operation(summary = "Get all credits for a game")
-    public ResponseEntity<List<Credits>> getCreditsForGame(@Parameter(example = "fortnite") @PathVariable("game") @NotBlank(message = "Game name cannot be empty") String game) {
+    public ResponseEntity<List<Credit>> getCreditsForGame(@Parameter(example = "fortnite") @PathVariable("game") @NotBlank(message = "Game name cannot be empty") String game) {
         return ok(service.getCreditsByGame(game));
     }
 
@@ -43,14 +43,14 @@ public class CreditsController {
 
     @GetMapping("/winner/{game}/{skill}")
     @Operation(summary = "Get high score for game and skill")
-    public ResponseEntity<Credits> getMaxCreditForGame(@Parameter(example = "fortnite") @PathVariable("game") @NotBlank(message = "Game name cannot be empty") String game,
-                                                       @NotNull @PathVariable("skill") SkillLevel skillLevel) {
+    public ResponseEntity<Credit> getMaxCreditForGame(@Parameter(example = "fortnite") @PathVariable("game") @NotBlank(message = "Game name cannot be empty") String game,
+                                                      @NotNull @PathVariable("skill") SkillLevel skillLevel) {
         return of(service.getHighestForGameAndSkill(game, skillLevel));
     }
 
     @GetMapping("/highscores")
     @Operation(summary = "Not working :( - Get high scores grouped by game and skill")
-    public ResponseEntity<List<Credits>> gethighScores() {
+    public ResponseEntity<List<Credit>> gethighScores() {
         return ok(service.getHighScores());
     }
 

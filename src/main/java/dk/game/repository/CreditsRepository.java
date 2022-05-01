@@ -1,6 +1,6 @@
 package dk.game.repository;
 
-import dk.game.entity.Credits;
+import dk.game.entity.Credit;
 import dk.game.entity.SkillLevel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface CreditsRepository extends JpaRepository<Credits, Long> {
+public interface CreditsRepository extends JpaRepository<Credit, Long> {
 
-    Optional<Credits> findTopByGame_nameAndUser_SkillOrderByCreditDesc(String gameName, SkillLevel skillLevel);
+    Optional<Credit> findTopByGame_nameAndUser_SkillOrderByCreditDesc(String gameName, SkillLevel skillLevel);
 
-    List<Credits> findAllByGame_Name(String name);
+    List<Credit> findAllByGame_Name(String name);
 
-    Optional<Credits> findByUser_Id(Integer id);
+    Optional<Credit> findByUser_Id(Integer id);
 
     /**
      * select c.user_id, max(c.credit), c.game_name, u.skill, u.name

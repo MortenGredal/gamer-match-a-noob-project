@@ -1,6 +1,6 @@
 package dk.game.service;
 
-import dk.game.entity.Credits;
+import dk.game.entity.Credit;
 import dk.game.entity.SkillLevel;
 import dk.game.repository.CreditsRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,20 +16,20 @@ public class CreditService {
     private final CreditsRepository creditsRepository;
 
     public void addCreditsToUser(Integer userId, int creditsToAdd) {
-        Credits credits = creditsRepository.findByUser_Id(userId).orElseThrow(() -> new IllegalArgumentException("No user was found with ID" + userId));
-        credits.setCredit(credits.getCredit() + creditsToAdd);
-        creditsRepository.save(credits);
+        Credit credit = creditsRepository.findByUser_Id(userId).orElseThrow(() -> new IllegalArgumentException("No user was found with ID" + userId));
+        credit.setCredit(credit.getCredit() + creditsToAdd);
+        creditsRepository.save(credit);
     }
 
-    public Optional<Credits> getHighestForGameAndSkill(String game, SkillLevel skillLevel) {
+    public Optional<Credit> getHighestForGameAndSkill(String game, SkillLevel skillLevel) {
         return creditsRepository.findTopByGame_nameAndUser_SkillOrderByCreditDesc(game, skillLevel);
     }
 
-    public List<Credits> getCreditsByGame(String game) {
+    public List<Credit> getCreditsByGame(String game) {
         return creditsRepository.findAllByGame_Name(game);
     }
 
-    public List<Credits> getHighScores() {
+    public List<Credit> getHighScores() {
         return null;
     }
 }
