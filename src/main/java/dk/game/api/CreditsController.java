@@ -33,11 +33,11 @@ public class CreditsController {
         return ok(service.getCreditsByGame(game));
     }
 
-    @PostMapping("/user/credit/{userid}")
+    @PostMapping("/user/{userid}/credit")
     @Operation(summary = "Update credits for user")
     public ResponseEntity<Void> updateCreditsForUser(@PathVariable("userid") @NotNull Integer userid,
-                                                     @RequestParam("credits") @Min(value = 0, message = "The value must be positive") Integer creditsToAdd) {
-        service.addCreditsToUser(userid, creditsToAdd);
+                                                     @RequestParam("credits") @Min(value = 0, message = "The value must be positive") Integer credits) {
+        service.addCreditsToUser(userid, credits);
         return noContent().build();
     }
 
