@@ -8,3 +8,7 @@ Docker
 run ```docker-compose up``` in root directory
 
 run ```mvn spring-boot:run```
+
+#Swagger-doc available here:  
+
+http://localhost:8080/swagger-ui/index.html
