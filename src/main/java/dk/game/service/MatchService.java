@@ -21,6 +21,6 @@ public class MatchService {
     }
 
     public List<User> findUsersBySkillRegionAndGame(Region region, SkillLevel skillLevel, Set<String> games) {
-        return userRepository.findAllBySkillAndRegionAndGames_NameIsIn(skillLevel, region, games);
+        return userRepository.findDistinctBySkillAndRegionAndGames_NameIsIn(skillLevel, region, games);
     }
 }

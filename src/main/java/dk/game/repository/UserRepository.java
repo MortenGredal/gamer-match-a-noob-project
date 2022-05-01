@@ -36,7 +36,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findAllBy(Skillz skillLevel, Region region, List<Game> games);
 */
 
-    List<User> findAllBySkillAndRegionAndGames_NameIsIn(SkillLevel skillLevel, Region region, Set<String> games);
+    List<User> findDistinctBySkillAndRegionAndGames_NameIsIn(SkillLevel skillLevel, Region region, Set<String> games);
 
 }
 

@@ -121,6 +121,14 @@ public class GamerConfiguration {
                     fortnite));
             users.save(noob_gamer_asia);
 
+            User noob_gamer_asia_2 = new User(11, "noob_gamer_asia_11", TotallyNotARobot, Asia, "noob_gamer_asia_11", NOOB, of(
+                    cod4,
+                    amogus,
+                    valhalla,
+                    dota,
+                    fortnite));
+            users.save(noob_gamer_asia_2);
+
 
             Credit c1 = new Credit();
             c1.setGame(fortnite);
