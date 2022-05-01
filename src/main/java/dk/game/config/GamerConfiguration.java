@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 
 import static dk.game.entity.Gender.TotallyNotARobot;
 import static dk.game.entity.Region.Asia;
-import static dk.game.entity.Skillz.NOOB;
-import static dk.game.entity.Skillz.PRO;
+import static dk.game.entity.SkillLevel.NOOB;
+import static dk.game.entity.SkillLevel.PRO;
 import static java.util.List.of;
 
 @Configuration
@@ -44,7 +44,7 @@ public class GamerConfiguration {
             dota = games.save(dota);
 
             // ALL GAEMS
-            User invincible_gamer_usa = new User(1, "invincible_gamer_usa_1", TotallyNotARobot, Region.USA, "invincible_gamer_usa_1", Skillz.INVINCIBLE, of(
+            User invincible_gamer_usa = new User(1, "invincible_gamer_usa_1", TotallyNotARobot, Region.USA, "invincible_gamer_usa_1", SkillLevel.INVINCIBLE, of(
                     cod4,
                     amogus,
                     valhalla,
@@ -68,7 +68,7 @@ public class GamerConfiguration {
 
             // // EUROPE
             // //
-            User invincible_gamer_europe = new User(4, "invincible_gamer_europe_4", TotallyNotARobot, Region.Europe, "invincible_gamer_europe_4", Skillz.INVINCIBLE, of(
+            User invincible_gamer_europe = new User(4, "invincible_gamer_europe_4", TotallyNotARobot, Region.Europe, "invincible_gamer_europe_4", SkillLevel.INVINCIBLE, of(
                     cod4,
                     amogus,
                     valhalla,
@@ -99,7 +99,7 @@ public class GamerConfiguration {
 
             // // Asia
 
-            User invincible_gamer_asia = new User(8, "invincible_gamer_asia_8", TotallyNotARobot, Asia, "invincible_gamer_asia_8", Skillz.INVINCIBLE, of(
+            User invincible_gamer_asia = new User(8, "invincible_gamer_asia_8", TotallyNotARobot, Asia, "invincible_gamer_asia_8", SkillLevel.INVINCIBLE, of(
                     cod4,
                     amogus,
                     valhalla,

@@ -1,6 +1,6 @@
 package dk.game.entity;
 
-public enum Skillz {
+public enum SkillLevel {
 
     NOOB,
     PRO,

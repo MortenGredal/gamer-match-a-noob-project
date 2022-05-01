@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -29,7 +28,7 @@ public class User {
     private Region region;
     private String nickname;
     @Enumerated(EnumType.STRING)
-    private Skillz skill;
+    private SkillLevel skill;
 
     @ManyToMany
     @JoinTable(name = "users_games",

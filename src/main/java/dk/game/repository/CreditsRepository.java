@@ -1,9 +1,8 @@
 package dk.game.repository;
 
 import dk.game.entity.Credits;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface CreditsRepository extends JpaRepository<Credits, Long> {
 
-    Optional<Credits> findTopByGame_nameAndUser_SkillOrderByCreditDesc(String gameName, Skillz skillz);
+    Optional<Credits> findTopByGame_nameAndUser_SkillOrderByCreditDesc(String gameName, SkillLevel skillLevel);
 
     List<Credits> findAllByGame_Name(String name);
 

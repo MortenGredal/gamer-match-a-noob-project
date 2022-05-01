@@ -2,7 +2,7 @@ package dk.game.service;
 
 import dk.game.entity.Game;
 import dk.game.entity.Region;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import dk.game.entity.User;
 import dk.game.repository.GameRepository;
 import dk.game.repository.UserRepository;
@@ -22,7 +22,7 @@ public class MatchService {
         this.gameRepository = gameRepository;
     }
 
-    public List<User> findUsersBySkillRegionAndGame(Region region, Skillz skillLevel, Set<String> games) {
+    public List<User> findUsersBySkillRegionAndGame(Region region, SkillLevel skillLevel, Set<String> games) {
         // Double query, I'm not happy about it
         // But it's either that or the more arcane Query by example
         Set<Game> allByName = gameRepository.findAllByNameIsIn(games);

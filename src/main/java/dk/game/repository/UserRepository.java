@@ -2,10 +2,9 @@ package dk.game.repository;
 
 import dk.game.entity.Game;
 import dk.game.entity.Region;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import dk.game.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,7 +35,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findAllBy(Skillz skillLevel, Region region, List<Game> games);
 */
 
-    List<User> findAllBySkillAndRegionAndGamesIsIn(Skillz skillLevel, Region region, Iterable<Game> games);
+    List<User> findAllBySkillAndRegionAndGamesIsIn(SkillLevel skillLevel, Region region, Iterable<Game> games);
 
 }
 

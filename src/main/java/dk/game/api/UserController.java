@@ -1,7 +1,7 @@
 package dk.game.api;
 
 import dk.game.entity.Region;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import dk.game.entity.User;
 import dk.game.service.MatchService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,7 +35,7 @@ public class UserController {
     @GetMapping("/match")
     @Operation(summary = "Get all users with skill, region and games")
     public ResponseEntity<List<User>> findUsersBySkillRegionAndGame(@NotNull(message = "Region cannot be blank") @RequestParam("region") Region region,
-                                                                    @NotNull(message = "Diagnosis = skill issue") @RequestParam("skill") Skillz skillLevel,
+                                                                    @NotNull(message = "Diagnosis = skill issue") @RequestParam("skill") SkillLevel skillLevel,
                                                                     @NotEmpty(message = "List of game names cannot be empty") @RequestParam("games") String... games) {
         return ResponseEntity.ok(matchService.findUsersBySkillRegionAndGame(region, skillLevel, Set.of(games)));
     }

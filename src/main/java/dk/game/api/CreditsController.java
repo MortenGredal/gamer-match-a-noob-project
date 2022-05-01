@@ -1,7 +1,7 @@
 package dk.game.api;
 
 import dk.game.entity.Credits;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import dk.game.service.CreditService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -44,8 +44,8 @@ public class CreditsController {
     @GetMapping("/winner/{game}/{skill}")
     @Operation(summary = "Get high score for game and skill")
     public ResponseEntity<Credits> getMaxCreditForGame(@Parameter(example = "fortnite") @PathVariable("game") @NotBlank(message = "Game name cannot be empty") String game,
-                                                       @NotNull @PathVariable("skill")Skillz skillz) {
-        return of(service.getHighestForGameAndSkill(game, skillz));
+                                                       @NotNull @PathVariable("skill") SkillLevel skillLevel) {
+        return of(service.getHighestForGameAndSkill(game, skillLevel));
     }
 
     @GetMapping("/highscores")

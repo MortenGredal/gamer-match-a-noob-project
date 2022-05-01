@@ -1,7 +1,7 @@
 package dk.game.service;
 
 import dk.game.entity.Credits;
-import dk.game.entity.Skillz;
+import dk.game.entity.SkillLevel;
 import dk.game.repository.CreditsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,8 @@ public class CreditService {
         creditsRepository.save(credits);
     }
 
-    public Optional<Credits> getHighestForGameAndSkill(String game, Skillz skillz) {
-        return creditsRepository.findTopByGame_nameAndUser_SkillOrderByCreditDesc(game, skillz);
+    public Optional<Credits> getHighestForGameAndSkill(String game, SkillLevel skillLevel) {
+        return creditsRepository.findTopByGame_nameAndUser_SkillOrderByCreditDesc(game, skillLevel);
     }
 
     public List<Credits> getCreditsByGame(String game) {
