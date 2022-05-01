@@ -15,11 +15,9 @@ import java.util.Set;
 public class MatchService {
 
     private final UserRepository userRepository;
-    private final GameRepository gameRepository;
 
-    public MatchService(UserRepository userRepository, GameRepository gameRepository) {
+    public MatchService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.gameRepository = gameRepository;
     }
 
     public List<User> findUsersBySkillRegionAndGame(Region region, SkillLevel skillLevel, Set<String> games) {
