@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -35,7 +36,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findAllBy(Skillz skillLevel, Region region, List<Game> games);
 */
 
-    List<User> findAllBySkillAndRegionAndGamesIsIn(SkillLevel skillLevel, Region region, Iterable<Game> games);
+    List<User> findAllBySkillAndRegionAndGames_NameIsIn(SkillLevel skillLevel, Region region, Set<String> games);
 
 }
 

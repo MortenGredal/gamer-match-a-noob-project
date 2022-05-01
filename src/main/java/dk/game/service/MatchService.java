@@ -23,9 +23,6 @@ public class MatchService {
     }
 
     public List<User> findUsersBySkillRegionAndGame(Region region, SkillLevel skillLevel, Set<String> games) {
-        // Double query, I'm not happy about it
-        // But it's either that or the more arcane Query by example
-        Set<Game> allByName = gameRepository.findAllByNameIsIn(games);
-        return userRepository.findAllBySkillAndRegionAndGamesIsIn(skillLevel, region, allByName);
+        return userRepository.findAllBySkillAndRegionAndGames_NameIsIn(skillLevel, region, games);
     }
 }
